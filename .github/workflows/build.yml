@@ -24,3 +24,5 @@ jobs:
           context: .
           push: false
           tags: ${{ secrets.DOCKERHUB_USERNAME }}/just_html_image:latest
+
+
