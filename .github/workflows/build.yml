@@ -1,23 +1,23 @@
 on:
+  #ngerun kalo ada push atau pull request dari branch main 
   push:
     branches:
-      - main
       - dev
   pull_request:
     branches:
-      - main
       - dev
 
-
+#apa yg dilakukan
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+        #https://github.com/actions/checkout tapi versi yang keempat
+      - uses: actions/checkout@v6
 
       - name: Ngesetup Docker buildx
-        uses: docker/setup-buildx-action@v3
-
+        uses: docker/setup-buildx-action@v4
+       
       - name: Build 
         uses: docker/build-push-action@v6
         with:
